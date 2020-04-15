@@ -5,7 +5,7 @@ const temperature = document.getElementById("temperature");
 weatherFrom.addEventListener("submit", e => {
   e.preventDefault();
   const location = search.value;
-  fetch("http://localhost:3000/weather?location=" + location).then(response => {
+  fetch("/weather?location=" + location).then(response => {
     console.log(response);
     response.json().then(data => {
       name.textContent = data.location;

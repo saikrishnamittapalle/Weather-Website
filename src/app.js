@@ -4,7 +4,7 @@ const app = express();
 const hbs = require("hbs");
 const getWeather = require("../src/utils/weather");
 const getGeoCode = require("../src/utils/geoCode");
-
+const port = process.env.PORT || 3000;
 console.log(__dirname);
 console.log(__filename);
 console.log(path.join(__dirname, "../public"));
@@ -56,6 +56,6 @@ app.get("*", (req, res) => {
     name: "sai"
   });
 });
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server Started");
 });
